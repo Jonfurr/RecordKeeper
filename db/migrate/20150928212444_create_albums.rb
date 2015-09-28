@@ -5,6 +5,7 @@ class CreateAlbums < ActiveRecord::Migration
       t.integer :year
       t.string :title, null: false
       t.string :pressing
+      t.string :format
       t.string :label
       t.string :genre
       t.text :image_url
