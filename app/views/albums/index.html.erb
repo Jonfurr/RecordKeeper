@@ -1,5 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<%= form_tag(albums_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Albums" %>
+<%= submit_tag "Search" %>
+<% end %>
+
+
+
 <h1>Listing Albums</h1>
 
 <table>

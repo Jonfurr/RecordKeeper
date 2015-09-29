@@ -3,9 +3,16 @@ class AlbumsController < ApplicationController
 
   # GET /albums
   # GET /albums.json
-  def index
+def index
     @albums = Album.all
+
+  if params[:search]
+    @albums = Album.search(params[:search]).order("created_at DESC")
+  else
+    @albums = Album.all.order('created_at DESC')
   end
+ end
+
 
   # GET /albums/1
   # GET /albums/1.json
@@ -76,4 +83,5 @@ class AlbumsController < ApplicationController
     def album_params
       params.require(:album).permit(:artist, :year, :title, :pressing, :label, :genre, :image_url, :tracklist, :country, :comment, :favorite)
     end
-end
+  end
+
