@@ -1,16 +1,13 @@
 Rails.application.routes.draw do
 
   # config/routes.rb
+  resources :albums
   root :to => 'users#index'
   resources :user_sessions
   resources :users
 
   get 'login' => 'user_sessions#new', :as => :login
   get 'logout' => 'user_sessions#destroy', :as => :logout
-
-  resources :albums
-
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -8,21 +8,52 @@
 </head>
 <body>
 
-<div id="nav">
-    <% if current_user %>
-      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
-      <%= link_to "Logout", :logout, method: :post %>
-    <% else %>
-      <%= link_to "Register", new_user_path %> |
-      <%= link_to "Login", :login %>
-    <% end %>
-  </div>
-  <div>
-    <p id="alert"><%= flash[:alert] %></p>
-  </div>
-  <%= yield %>
+  <head>
+    <title>RecordKeeper</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= favicon_link_tag 'favicon.ico' %>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row jumbotron">
+        <h1 id="title"><span id="rec">REC</span>ordKeeper</h1>
+      </div>
+      <div id="body" class="row panel panel-default">  
+        <div class="panel-body col-md-12">
+          <div class="col-md-4" role="navigation">
+            <ul class="nav nav-pills">
+              <li role="presentation" class="active"><a href="users">Home</a></li>
+              <li role="presentation"><a href="users">Profile</a></li>
+            </ul>
+          </div>
+           <div class="col-md-4 pull-right">
+            <div id="login">
+              <% if current_user %>
+                <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
+                <%= link_to "Logout", :logout, method: :post %>
+              <% else %>
+                <%= link_to "Register", new_user_path %> |
+                <%= link_to "Login", :login %>
+              <% end %>
+            </div>
+          </div>
+          <div>
+            <p id="alert"><%= flash[:alert] %></p>
+          </div>
+          <div class="col-md-4">
+           
 
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+          <%= yield %> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
-  
-</body>
 </html>
