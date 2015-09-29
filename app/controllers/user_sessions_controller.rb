@@ -11,7 +11,7 @@ class UserSessionsController < ApplicationController
       redirect_back_or_to(:users, notice: 'Login successful')
     else
       flash.now[:alert] = 'Login Failed. Please create an account!'
-      render action: 'new'
+      redirect_back_or_to('login', notice: 'Your login failed!')
     end
   end
 

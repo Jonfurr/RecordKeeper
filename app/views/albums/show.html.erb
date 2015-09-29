@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Artist:</strong>
@@ -56,4 +56,62 @@
 </p>
 
 <%= link_to 'Edit', edit_album_path(@album) %> |
-<%= link_to 'Back', albums_path %>
+<%= link_to 'Back', albums_path %> -->
+
+<p id="notice"><%= notice %></p>
+
+<div class="container">  
+  <div class="row">
+        <div id = "prof_box" class=" col-md-3">
+      <img id="prof_pic" src="<%= @album.image_url %>">
+        <table class="table table-striped">
+        <!--   <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+            </tr>
+          </thead> -->
+
+          <tbody>
+              <tr>
+                <td><%= @album.title %></td>
+                <td><%= @album.artist %></td>
+              </tr>
+          </tbody>
+        </table>
+      <br>      
+    </div>
+    <div id="prof_content" class= "col-md-9">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Arist</th>
+            <th>Album</th>
+            <th>Year</th>
+            <th>Label</th>
+            <th>Format</th>
+            <th>Pressing</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= @album.artist %>
+            </td>
+            <td><%= @album.title %>
+            </td>
+            <td><%= @album.year %>
+            </td>
+            <td><%= @album.label %>
+            </td>
+            <td><%= @album.format %>
+            </td>
+            <td><%= @album.pressing %>
+            </td>
+          </tr>
+        </tbody>
+      </table>  
+    </div>
+  </div>
+</div>
+<br>
+<br>

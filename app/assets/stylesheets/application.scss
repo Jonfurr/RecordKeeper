@@ -9,8 +9,27 @@
 	box-shadow: 3px 3px 5px #808080;
 }
 
+#prof_pic {
+	max-width:100%;
+	max-height:100%;
+	margin-bottom: 2%;
+	border-radius: 10px;
+	border: 1px solid #808080;
+}
+
+#prof_box {
+	box-shadow: 3px 3px 5px #808080;
+	padding-top: 2%;
+	border-radius: 10px;
+	background-color: #f9f9f9;
+}
+
 #login {
 	margin-top: 2%;
+}
+
+.btn {
+	margin-top: 10px;
 }
 
 #body {
@@ -40,4 +59,9 @@
 #pills {
 	color: white;
 	text-shadow: -4px 4px 2px #000000;
+}
+
+.thumbnail{
+   max-width: 100px;
+   max-height: 100px;
 }

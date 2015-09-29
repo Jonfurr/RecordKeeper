@@ -3,9 +3,16 @@ class AlbumsController < ApplicationController
 
   # GET /albums
   # GET /albums.json
-  def index
+def index
     @albums = Album.all
+
+  if params[:search]
+    @albums = Album.search(params[:search]).order("created_at DESC")
+  else
+    @albums = Album.all.order('created_at DESC')
   end
+ end
+
 
   # GET /albums/1
   # GET /albums/1.json
@@ -29,10 +36,15 @@ class AlbumsController < ApplicationController
   # POST /albums
   # POST /albums.json
   def create
+<<<<<<< HEAD
 
     @album = Album.new(album_params)
    
 
+=======
+    @album = Album.new(album_params.merge(user_id: @current_user.id))
+  
+>>>>>>> bb3a46ab3d1f62c54c1738ff9e417feb8e3c72a6
     respond_to do |format|
       if @album.save
         format.html { redirect_to @album, notice: 'Album was successfully created.' }
@@ -78,4 +90,5 @@ class AlbumsController < ApplicationController
     def album_params
       params.require(:album).permit(:artist, :year, :title, :pressing, :label, :genre, :image_url, :tracklist, :country, :comment, :favorite)
     end
-end
+  end
+
