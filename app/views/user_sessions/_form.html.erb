@@ -14,3 +14,7 @@
     <%= submit_tag "Login", class: "btn btn-primary" %>
   </div>
 <% end %>
+
+<% if flash[:error] %>
+  <p><%= flash[:error] %></p>
+<% end %>
