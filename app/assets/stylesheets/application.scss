@@ -1,2 +1,43 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.jumbotron {
+	background-image: url(http://g.fastcompany.net/multisite_files/cocreate/article_feature/1280-jp-record-shelf-1.jpg);
+	background-repeat: no-repeat;
+    background-position: right top;
+	margin-top: 2%;
+	box-shadow: 3px 3px 5px #808080;
+}
+
+#login {
+	margin-top: 2%;
+}
+
+#body {
+	background-color: #eaeaea;
+	border-radius: 10px;
+	box-shadow: 3px 3px 5px #808080;
+}
+
+#title {
+	/*font-family: 'Permanent Marker', cursive;*/
+	font-size: 64pt;
+	color: white;
+	text-shadow: -4px 4px 2px #000000;
+}
+
+#rec {
+	color:red;
+	text-shadow: -4px 4px 2px #000000;
+}
+
+#navbar {
+	padding-left: 5%;
+	background-color: #ff0000;
+	border-bottom: 2px solid black;
+}
+
+#pills {
+	color: white;
+	text-shadow: -4px 4px 2px #000000;
+}
