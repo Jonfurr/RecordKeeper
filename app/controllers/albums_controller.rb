@@ -10,6 +10,7 @@ class AlbumsController < ApplicationController
   # GET /albums/1
   # GET /albums/1.json
   def show
+    
   end
   
   # def album
@@ -28,6 +29,7 @@ class AlbumsController < ApplicationController
   # POST /albums
   # POST /albums.json
   def create
+
     @album = Album.new(album_params)
    
 
