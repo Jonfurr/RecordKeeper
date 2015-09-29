@@ -28,9 +28,8 @@ class AlbumsController < ApplicationController
   # POST /albums
   # POST /albums.json
   def create
-    @album = Album.new(album_params)
-   
-
+    @album = Album.new(album_params.merge(user_id: @current_user.id))
+  
     respond_to do |format|
       if @album.save
         format.html { redirect_to @album, notice: 'Album was successfully created.' }
