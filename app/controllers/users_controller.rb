@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-          session[:user_id] = @user.id
+          session[:current_user] = @user.id
           format.html { redirect_to(:users, :notice => 'Registration successfull.') }
           format.json { render :show, status: :created, location: @user }
       else

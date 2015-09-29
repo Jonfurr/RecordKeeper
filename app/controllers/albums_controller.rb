@@ -11,10 +11,14 @@ class AlbumsController < ApplicationController
   # GET /albums/1.json
   def show
   end
-
+  
+  # def album
+   
+  # end
   # GET /albums/new
   def new
     @album = Album.new
+    
   end
 
   # GET /albums/1/edit
@@ -25,6 +29,7 @@ class AlbumsController < ApplicationController
   # POST /albums.json
   def create
     @album = Album.new(album_params)
+   
 
     respond_to do |format|
       if @album.save
@@ -69,6 +74,6 @@ class AlbumsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def album_params
-      params.require(:album).permit(:artist, :year, :title, :pressing, :label, :genre, :image, :tracklist, :country, :comment, :favorite)
+      params.require(:album).permit(:artist, :year, :title, :pressing, :label, :genre, :image_url, :tracklist, :country, :comment, :favorite)
     end
 end
