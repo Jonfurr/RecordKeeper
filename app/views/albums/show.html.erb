@@ -63,7 +63,7 @@
 <div class="container">  
   <div class="row">
         <div id = "prof_box" class=" col-md-3">
-      <img id="prof_pic" src="<%= @album.image %>">
+      <img id="prof_pic" src="<%= @album.image_url %>">
         <table class="table table-striped">
         <!--   <thead>
             <tr>
@@ -95,19 +95,17 @@
         </thead>
         <tbody>
           <tr>
-            <td><img class="img-thumbnail" width="100px" height="auto" src="<%= @user.pic_url %>">  
+            <td><%= @album.artist %>
             </td>
-            <td><%= @user.name %>
+            <td><%= @album.title %>
             </td>
-            <td><%= @user.name %>
+            <td><%= @album.year %>
             </td>
-            <td><%= @user.name %>
+            <td><%= @album.label %>
             </td>
-            <td><%= @user.name %>
+            <td><%= @album.format %>
             </td>
-            <td><%= @user.name %>
-            </td>
-            <td><%= @user.name %>
+            <td><%= @album.pressing %>
             </td>
           </tr>
         </tbody>
@@ -117,5 +115,3 @@
 </div>
 <br>
 <br>
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
