@@ -9,6 +9,21 @@
 	box-shadow: 3px 3px 5px #808080;
 }
 
+#prof_pic {
+	max-width:100%;
+	max-height:100%;
+	margin-bottom: 2%;
+	border-radius: 10px;
+	border: 1px solid #808080;
+}
+
+#prof_box {
+	box-shadow: 3px 3px 5px #808080;
+	padding-top: 2%;
+	border-radius: 10px;
+	background-color: #f9f9f9;
+}
+
 #login {
 	margin-top: 2%;
 }
