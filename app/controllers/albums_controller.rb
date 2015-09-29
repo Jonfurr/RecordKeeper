@@ -11,10 +11,14 @@ class AlbumsController < ApplicationController
   # GET /albums/1.json
   def show
   end
-
+  
+  # def album
+   
+  # end
   # GET /albums/new
   def new
     @album = Album.new
+    
   end
 
   # GET /albums/1/edit
@@ -25,6 +29,7 @@ class AlbumsController < ApplicationController
   # POST /albums.json
   def create
     @album = Album.new(album_params)
+   
 
     respond_to do |format|
       if @album.save
