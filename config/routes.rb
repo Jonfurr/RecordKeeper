@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   # config/routes.rb
   resources :albums
-  root :to => 'users#index'
+  root :to => 'albums#index'
   resources :user_sessions
   resources :users
 

@@ -1,9 +1,126 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+<div class="container">	 
+	<div class="row">
+        <div id = "prof_box" class=" col-md-3">
+			<img id="prof_pic" src="<%= @user.pic_url %>">
+				<table class="table table-striped">
+				<!--   <thead>
+				    <tr>
+				      <th>Name</th>
+				      <th>Email</th>
+				    </tr>
+				  </thead> -->
 
+				  <tbody>
+				      <tr>
+				        <td><%= @user.name %></td>
+				      	<td><%= @user.email %></td>
+				      </tr>
+				  </tbody>
+				</table>
+			<br>			
+		</div>
+		<div id="prof_content" class= "col-md-9">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Cover</th>
+						<th>Arist</th>
+						<th>Album</th>
+						<th>Year</th>
+						<th>Label</th>
+						<th>Format</th>
+						<th>Pressing</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><img class="img-thumbnail" width="100px" height="auto" src="<%= @user.pic_url %>">	
+						</td>
+						<td><%= @user.name %>
+						</td>
+						<td><%= @user.name %>
+						</td>
+						<td><%= @user.name %>
+						</td>
+						<td><%= @user.name %>
+						</td>
+						<td><%= @user.name %>
+						</td>
+						<td><%= @user.name %>
+						</td>
+					</tr>
+					<tr>
+						<td><img class="img-thumbnail" width="100px" height="auto" src="<%= @user.pic_url %>">	
+						</td>
+						<td><%= @user.name %>
+						</td>
+						<td><%= @user.name %>
+						</td>
+						<td><%= @user.name %>
+						</td>
+						<td><%= @user.name %>
+						</td>
+						<td><%= @user.name %>
+						</td>
+						<td><%= @user.name %>
+						</td>
+					</tr>
+					<tr>
+						<td><img class="img-thumbnail" width="100px" height="auto" src="<%= @user.pic_url %>">	
+						</td>
+						<td><%= @user.name %>
+						</td>
+						<td><%= @user.name %>
+						</td>
+						<td><%= @user.name %>
+						</td>
+						<td><%= @user.name %>
+						</td>
+						<td><%= @user.name %>
+						</td>
+						<td><%= @user.name %>
+						</td>
+					</tr>
+					<tr>
+						<td><img class="img-thumbnail" width="100px" height="auto" src="<%= @user.pic_url %>">	
+						</td>
+						<td><%= @user.name %>
+						</td>
+						<td><%= @user.name %>
+						</td>
+						<td><%= @user.name %>
+						</td>
+						<td><%= @user.name %>
+						</td>
+						<td><%= @user.name %>
+						</td>
+						<td><%= @user.name %>
+						</td>
+					</tr>
+					<tr>
+						<td><img class="img-thumbnail" width="100px" height="auto" src="<%= @user.pic_url %>">	
+						</td>
+						<td><%= @user.name %>
+						</td>
+						<td><%= @user.name %>
+						</td>
+						<td><%= @user.name %>
+						</td>
+						<td><%= @user.name %>
+						</td>
+						<td><%= @user.name %>
+						</td>
+						<td><%= @user.name %>
+						</td>
+					</tr>
+				</tbody>
+			</table>	
+		</div>
+	</div>
+</div>
+<br>
+<br>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
