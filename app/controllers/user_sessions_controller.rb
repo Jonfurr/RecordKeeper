@@ -7,10 +7,10 @@ class UserSessionsController < ApplicationController
 
   def create
     if @user = login(params[:email], params[:password])
-      redirect_back_or_to(:users, notice: 'Login successful')
+      redirect_back_or_to(:albums, notice: 'Login successful')
     else
-      flash.now[:alert] = 'Login Failed. Please create an account!'
-      redirect_back_or_to('login', notice: 'Your login failed!')
+      flash[:error] = "Your login failed. Please try again or create an account!"
+      redirect_back_or_to(:login)
     end
   end
 
