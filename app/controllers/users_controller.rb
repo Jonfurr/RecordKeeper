@@ -30,8 +30,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     respond_to do |format|
-      session[:current_user_id] = @user.id
       if @user.save
+          auto_login(@user)
           format.html { redirect_to(:users, :notice => 'Registration successfull.') }
           format.json { render :show, status: :created, location: @user }
       else
