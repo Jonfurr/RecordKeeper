@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
   skip_before_filter :require_login, only: [:index, :new, :create]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  
 
   # GET /users
   # GET /users.json
@@ -11,7 +12,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-  
+   @user = User.find(params[:id])
   end
 
   # GET /users/new
@@ -29,8 +30,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     respond_to do |format|
+      session[:current_user_id] = @user.id
       if @user.save
-          session[:current_user] = @user.id
           format.html { redirect_to(:users, :notice => 'Registration successfull.') }
           format.json { render :show, status: :created, location: @user }
       else
@@ -73,7 +74,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :name, :password, :password_confirmation)
+      params.require(:user).permit(:email, :name, :password, :password_confirmation, :session)
     end
 end
 

@@ -17,6 +17,7 @@ def index
   # GET /albums/1
   # GET /albums/1.json
   def show
+    
   end
   
   # def album
@@ -80,7 +81,7 @@ def index
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def album_params
-      params.require(:album).permit(:artist, :year, :title, :pressing, :label, :genre, :image_url, :tracklist, :country, :comment, :favorite)
+      params.require(:album).permit(:artist, :year, :title, :pressing, :label, :genre, :format, :image_url, :tracklist, :country, :comment, :favorite)
     end
   end
 
