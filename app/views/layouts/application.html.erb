@@ -19,27 +19,31 @@
   <body>
     <div class="container">
       <div class="row jumbotron">
-        <h1 id="title"><span id="rec">REC</span>ordKeeper</h1>
+        <h1 id="title"><a href="/"><span id="rec">REC</span>ordKeeper</a></h1>
       </div>
       <div id="body" class="row panel panel-default">  
         <div class="panel-body col-md-12">
           <div class="col-md-4" role="navigation">
-            <ul class="nav nav-pills">
-              <li role="presentation" class="active"><a href="users">Home</a></li>
-              <li role="presentation"><a href="#">Profile</a></li>
-            </ul>
+             <div class="nav">
+              <% if current_user %>
+                <%= link_to "Home", albums_path %> | 
+                <%= link_to "Profile", user_path(current_user.id) %>
+              <% else %>
+                <%= link_to "Home", albums_path %> | 
+                <%= link_to "Profile", :login %>
+              <% end %>
+            </div>
           </div>
           <div class="col-md-4">
-           
-
+      
           </div>
-           <div class="col-md-4 pull-right">
-            <div id="login">
+           <div class="col-md-4">
+            <div class="nav" id="login">
               <% if current_user %>
-                <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
+                <%= link_to "Edit Profile", edit_user_path(current_user.id) %> | 
                 <%= link_to "Logout", :logout, method: :post %>
               <% else %>
-                <%= link_to "Register", new_user_path %> |
+                <%= link_to "Register", new_user_path %> | 
                 <%= link_to "Login", :login %>
               <% end %>
             </div>
