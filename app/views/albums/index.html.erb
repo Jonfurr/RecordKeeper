@@ -20,10 +20,10 @@
   <tbody>
     <% @albums.each do |album| %>
       <tr>
-        <td><img class="img-thumbnail" width="100px" src="<%= album.image_url %>"></td>
-        <td><%= album.artist %></td>
-        <td><%= album.title %></td>
-        <td><%= album.year %></td>
+        <td><a href="/albums/<%= album.id %>"><img class="img-thumbnail" width="100px" src="<%= album.image_url %>"></a></td>
+        <td><a href="/albums/<%= album.id %>"><%= album.artist %></a></td>
+        <td><a href="/albums/<%= album.id %>"><%= album.title %></a></td>
+        <td><a href="/albums/<%= album.id %>"><%= album.year %></a></td>
        <!--  <td><%= album.label %></td>
         <td><%= album.genre %></td>
         <td><%= album.pressing %></td>
