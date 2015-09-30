@@ -48,7 +48,7 @@ def index
   # POST /albums
   # POST /albums.json
   def create
-    @album = Album.new(album_params.merge(user_id: @current_user.id))
+    @album = Album.new(album_params.merge(user_id: @current_user_id))
   
     respond_to do |format|
       if @album.save
