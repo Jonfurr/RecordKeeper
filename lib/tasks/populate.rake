@@ -3,7 +3,7 @@ namespace :db do
 	task :populate => :environment do
 		require 'populator'
 
-		[User, Album].each(&:delete_all)
+		# [User, Album].each(&:delete_all)
 
 		User.populate 20 do |user|
 			user.name = Populator.words(2)
@@ -15,7 +15,7 @@ namespace :db do
 			user.updated_at = 2.years.from_now..Time.now
 			Album.populate 20 do |album|
 				# album.user_id = user.id
-				album.user_id = 270
+				album.user_id = 313..332
 				album.artist = Populator.words(2)
 				album.year = 1800..2015
 				album.title = Populator.words(2)
