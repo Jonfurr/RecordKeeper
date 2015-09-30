@@ -3,24 +3,24 @@ class AlbumsController < ApplicationController
 
   # GET /albums
   # GET /albums.json
-def index
+  def index
     @albums = Album.all
 
-  if params[:search]
-    @albums = Album.search(params[:search]).order("created_at DESC")
-  else
-    @albums = Album.all.order('created_at DESC')
+    if params[:search]
+      @albums = Album.search(params[:search]).order("created_at DESC")
+    else
+      @albums = Album.all.order('created_at DESC')
+    end
   end
- end
 
 
   # GET /albums/1
   # GET /albums/1.json
   def show
-    
+    @album = Album.find(params[:id])
   end
   
-  # def album
+ 
    
   # end
   # GET /albums/new
@@ -31,6 +31,7 @@ def index
 
   # GET /albums/1/edit
   def edit
+
   end
 
   # POST /albums
