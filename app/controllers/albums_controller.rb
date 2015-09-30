@@ -36,15 +36,8 @@ def index
   # POST /albums
   # POST /albums.json
   def create
-<<<<<<< HEAD
-
-    @album = Album.new(album_params)
-   
-
-=======
     @album = Album.new(album_params.merge(user_id: @current_user.id))
   
->>>>>>> bb3a46ab3d1f62c54c1738ff9e417feb8e3c72a6
     respond_to do |format|
       if @album.save
         format.html { redirect_to @album, notice: 'Album was successfully created.' }
