@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   # config/routes.rb
   resources :albums
-  root 'welcome#index', :as => :welcome
+  root 'albums#index', :as => :welcome
   resources :user_sessions
   resources :users
 
