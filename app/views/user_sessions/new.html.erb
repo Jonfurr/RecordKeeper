@@ -19,3 +19,7 @@
 	  </div>
 	<% end %>
 </div>
+
+<% if flash[:error] %>
+  <p><%= flash[:error] %></p>
+<% end %>
