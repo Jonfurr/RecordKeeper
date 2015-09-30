@@ -19,6 +19,22 @@
     </tr>
   </thead>
 
+
+<div id="prof_content" class= "col-md-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Cover</th>
+            <th>Arist</th>
+            <th>Album</th>
+            <th>Year</th>
+           <!--  <th>Label</th>
+            <th>Genre</th>
+            <th>Format</th>
+            <th>Pressing</th> -->
+          </tr>
+        </thead>
+
   <tbody>
     <% @albums.each do |album| %>
       <tr>
@@ -26,6 +42,7 @@
         <td><%= album.artist %></td>
         <td><%= album.title %></td>
         <td><%= album.year %></td>
+
         <!-- <td><%= album.pressing %></td>
         <td><%= album.label %></td> -->
         <td><%= album.genre %></td>

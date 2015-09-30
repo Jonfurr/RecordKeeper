@@ -3,13 +3,21 @@ class AlbumsController < ApplicationController
 
   # GET /albums
   # GET /albums.json
-  def index
+def index
     @albums = Album.all
+
+  if params[:search]
+    @albums = Album.search(params[:search]).order("created_at DESC")
+  else
+    @albums = Album.all.order('created_at DESC')
   end
+ end
+
 
   # GET /albums/1
   # GET /albums/1.json
   def show
+    
   end
   
   # def album
@@ -28,8 +36,9 @@ class AlbumsController < ApplicationController
   # POST /albums
   # POST /albums.json
   def create
-    @album = Album.new(album_params)
 
+    @album = Album.new(album_params.merge(user_id: @current_user.id))
+  
     respond_to do |format|
       if @album.save
         format.html { redirect_to @album, notice: 'Album was successfully created.' }
@@ -73,6 +82,7 @@ class AlbumsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def album_params
-      params.require(:album).permit(:artist, :year, :title, :pressing, :label, :genre, :image_url, :tracklist, :country, :comment, :favorite)
+      params.require(:album).permit(:artist, :year, :title, :pressing, :label, :genre, :format, :image_url, :tracklist, :country, :comment, :favorite)
     end
-end
+  end
+

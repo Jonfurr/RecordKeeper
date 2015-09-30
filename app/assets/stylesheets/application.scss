@@ -24,8 +24,13 @@
 	background-color: #f9f9f9;
 }
 
-#login {
+.nav {
 	margin-top: 2%;
+	margin-bottom: 4%;
+}
+
+#login {
+		text-align: right;
 }
 
 .btn {
@@ -44,6 +49,10 @@
 	color: white;
 	text-shadow: -4px 4px 2px #000000;
 }
+#title a {
+	text-decoration: none;
+	color: white;
+}
 
 #rec {
 	color:red;
@@ -59,4 +68,9 @@
 #pills {
 	color: white;
 	text-shadow: -4px 4px 2px #000000;
+}
+
+.thumbnail{
+   max-width: 100px;
+   max-height: 100px;
 }
