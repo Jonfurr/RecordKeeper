@@ -74,42 +74,33 @@
 
           <tbody>
               <tr>
-                <td><%= @album.title %></td>
-                <td><%= @album.artist %></td>
+                <td>Artist: <%= @album.artist %></td>
+              </tr>
+              <tr>  
+                <td>Title: <%= @album.title %></td>
+              </tr>
+              <tr>  
+                <td>Year: <%= @album.year %></td>
+              </tr>
+               <tr>  
+                <td>Label: <%= @album.label %></td>
+              </tr>
+              <tr>  
+                <td>Format: <%= @album.format %></td>
+              </tr>
+              <tr>  
+                <td>Pressing: <%= @album.pressing %></td>
+              </tr>
+              <tr>  
+                <td>Country: <%= @album.country %></td>
               </tr>
           </tbody>
         </table>
       <br>      
     </div>
     <div id="prof_content" class= "col-md-9">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Arist</th>
-            <th>Album</th>
-            <th>Year</th>
-            <th>Label</th>
-            <th>Format</th>
-            <th>Pressing</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><%= @album.artist %>
-            </td>
-            <td><%= @album.title %>
-            </td>
-            <td><%= @album.year %>
-            </td>
-            <td><%= @album.label %>
-            </td>
-            <td><%= @album.format %>
-            </td>
-            <td><%= @album.pressing %>
-            </td>
-          </tr>
-        </tbody>
-      </table>  
+      <h1><%= @album.artist %></h1>
+      <h3><%= @album.title %></h3><br><br>      
     </div>
   </div>
 </div>

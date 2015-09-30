@@ -1,8 +1,10 @@
 class AlbumsController < ApplicationController
   before_action :set_album, only: [:show, :edit, :update, :destroy]
+  skip_before_filter :require_login, :except => [:albums]
 
   # GET /albums
   # GET /albums.json
+# <<<<<<< HEAD
 def index
 
   if params[:search]
@@ -10,16 +12,26 @@ def index
   else
     @albums = Album.take(10)
   end
- end
+# =======
+#   def index
+#     @albums = Album.all
+
+#     if params[:search]
+#       @albums = Album.search(params[:search]).order("created_at DESC")
+#     else
+#       @albums = Album.all.order('created_at DESC')
+#     end
+# >>>>>>> master
+  end
 
 
   # GET /albums/1
   # GET /albums/1.json
   def show
-    
+    @album = Album.find(params[:id])
   end
   
-  # def album
+ 
    
   # end
   # GET /albums/new
@@ -30,6 +42,7 @@ def index
 
   # GET /albums/1/edit
   def edit
+
   end
 
   # POST /albums

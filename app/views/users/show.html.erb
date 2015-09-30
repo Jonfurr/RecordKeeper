@@ -16,6 +16,7 @@
 				      <tr>
 				        <td><%= @user.name %></td>
 				      	<td><%= @user.email %></td>
+				      	<ul role="presentation" class="active"><a href="/albums/new">Add Album</a></ul>.
 				      </tr>
 				  </tbody>
 				</table>
@@ -26,7 +27,7 @@
 				<thead>
 					<tr>
 						<th>Cover</th>
-						<th>Arist</th>
+						<th>Artist</th>
 						<th>Album</th>
 						<th>Year</th>
 						<th>Label</th>
@@ -36,84 +37,20 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td><img class="img-thumbnail" width="100px" height="auto" src="<%= @user.pic_url %>">	
+						<% @albums.each do |album| %>
+      					<tr>
+        			<td><img class="img-thumbnail" width="100px" src="<%= album.image_url %>"></td>
+        				<td><%= album.artist %></td>
+        				<td><%= album.title %></td>
+        				<td><%= album.year %></td>
+						<td><%= album.label %>
 						</td>
-						<td><%= @user.name %>
+						<td><%= album.format %>
 						</td>
-						<td><%= @user.name %>
-						</td>
-						<td><%= @user.name %>
-						</td>
-						<td><%= @user.name %>
-						</td>
-						<td><%= @user.name %>
-						</td>
-						<td><%= @user.name %>
-						</td>
-					</tr>
-					<tr>
-						<td><img class="img-thumbnail" width="100px" height="auto" src="<%= @user.pic_url %>">	
-						</td>
-						<td><%= @user.name %>
-						</td>
-						<td><%= @user.name %>
-						</td>
-						<td><%= @user.name %>
-						</td>
-						<td><%= @user.name %>
-						</td>
-						<td><%= @user.name %>
-						</td>
-						<td><%= @user.name %>
-						</td>
-					</tr>
-					<tr>
-						<td><img class="img-thumbnail" width="100px" height="auto" src="<%= @user.pic_url %>">	
-						</td>
-						<td><%= @user.name %>
-						</td>
-						<td><%= @user.name %>
-						</td>
-						<td><%= @user.name %>
-						</td>
-						<td><%= @user.name %>
-						</td>
-						<td><%= @user.name %>
-						</td>
-						<td><%= @user.name %>
-						</td>
-					</tr>
-					<tr>
-						<td><img class="img-thumbnail" width="100px" height="auto" src="<%= @user.pic_url %>">	
-						</td>
-						<td><%= @user.name %>
-						</td>
-						<td><%= @user.name %>
-						</td>
-						<td><%= @user.name %>
-						</td>
-						<td><%= @user.name %>
-						</td>
-						<td><%= @user.name %>
-						</td>
-						<td><%= @user.name %>
-						</td>
-					</tr>
-					<tr>
-						<td><img class="img-thumbnail" width="100px" height="auto" src="<%= @user.pic_url %>">	
-						</td>
-						<td><%= @user.name %>
-						</td>
-						<td><%= @user.name %>
-						</td>
-						<td><%= @user.name %>
-						</td>
-						<td><%= @user.name %>
-						</td>
-						<td><%= @user.name %>
-						</td>
-						<td><%= @user.name %>
-						</td>
+						<td><%= album.pressing %>
+						</tr>
+					 <% end %>
+					
 					</tr>
 				</tbody>
 			</table>	
