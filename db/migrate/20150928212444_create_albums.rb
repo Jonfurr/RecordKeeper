@@ -1,6 +1,7 @@
 class CreateAlbums < ActiveRecord::Migration
   def change
     create_table :albums do |t|
+      
       t.string :artist, null: false
       t.integer :year
       t.string :title, null: false
@@ -17,6 +18,6 @@ class CreateAlbums < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_index :albums, [:artist, :title, :genre, :user_id]
+    add_index :albums, [:artist, :title, :genre, :user]
   end
 end

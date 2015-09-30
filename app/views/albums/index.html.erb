@@ -1,12 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<%= form_tag(albums_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search Albums" %>
-<%= submit_tag "Search" %>
-<% end %>
-
-
-
 <h1>Listing Albums</h1>
 
 <table class="table table-striped">
@@ -25,21 +18,36 @@
     </tr>
   </thead>
 
+<div id="prof_content" class= "col-md-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Cover</th>
+            <th>Arist</th>
+            <th>Album</th>
+            <th>Year</th>
+           <!--  <th>Label</th>
+            <th>Genre</th>
+            <th>Format</th>
+            <th>Pressing</th> -->
+          </tr>
+        </thead>
+
   <tbody>
     <% @albums.each do |album| %>
       <tr>
+        <td><img class="img-thumbnail" width="100px" src="<%= album.image_url %>"></td>
         <td><%= album.artist %></td>
-        <td><%= album.year %></td>
         <td><%= album.title %></td>
-        <td><%= album.pressing %></td>
-        <td><%= album.label %></td>
+        <td><%= album.year %></td>
+       <!--  <td><%= album.label %></td>
         <td><%= album.genre %></td>
-        <td><img class="thumbnail" src="<%= album.image_url %>"></td>
+        <td><%= album.pressing %></td>
         <td><%= album.country %></td>
-        <td><%= album.favorite %></td>
-        <td><%= link_to 'Show', album %></td>
+        <td><%= album.comment %></td> -->
+        <!-- <td><%= link_to 'Show', album %></td>
         <td><%= link_to 'Edit', edit_album_path(album) %></td>
-        <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>

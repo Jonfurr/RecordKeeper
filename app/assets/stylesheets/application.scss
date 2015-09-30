@@ -24,8 +24,13 @@
 	background-color: #f9f9f9;
 }
 
-#login {
+.nav {
 	margin-top: 2%;
+	margin-bottom: 4%;
+}
+
+#login {
+		text-align: right;
 }
 
 .btn {
@@ -43,6 +48,10 @@
 	font-size: 64pt;
 	color: white;
 	text-shadow: -4px 4px 2px #000000;
+}
+#title a {
+	text-decoration: none;
+	color: white;
 }
 
 #rec {

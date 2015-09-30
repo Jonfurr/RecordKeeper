@@ -1,5 +1,6 @@
 class Album < ActiveRecord::Base
-	 belongs_to :customer
+	 belongs_to :user
+
 
 		def self.search(search)
   		# where("title ILIKE ?", "%#{search}%")
