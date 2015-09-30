@@ -7,6 +7,6 @@ class Album < ActiveRecord::Base
   		# where("artist ILIKE ?", "%#{search}%")
   		# where("genre ILIKE ?", "%#{search}%")
 
-  		Album.where('title ILIKE :search OR genre ILIKE :search OR artist ILIKE :search', search: "%#{search}%")
+  		Album.where('title ILIKE :search OR genre ILIKE :search OR artist ILIKE :search OR label ILIKE :search', search: "%#{search}%")
 	end
 end

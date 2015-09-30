@@ -1,13 +1,5 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>RecordKeeper</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
   <head>
     <title>RecordKeeper</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -35,7 +27,14 @@
             </div>
           </div>
           <div class="col-md-4">
-      
+
+                <!-- SITEWIDE SEARCH BAR -->
+
+            <%= form_tag(albums_path, :method => "get", id: "search-form") do %>
+            <%= text_field_tag :search, params[:search], placeholder: "Search" %>
+            <%= submit_tag "Search" %>
+            <% end %>
+
           </div>
            <div class="col-md-4">
             <div class="nav" id="login">

@@ -14,7 +14,7 @@ class UserSessionsController < ApplicationController
 
     else
       flash[:error] = "Your login failed. Please try again or create an account!"
-      redirect_back_or_to(:login)
+      redirect_back_or_to('welcome')
     end
   end
 
