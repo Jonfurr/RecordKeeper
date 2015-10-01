@@ -51,6 +51,9 @@ def index
   # POST /albums.json
   def create
     @album = Album.new(album_params.merge(user_id: @current_user_id))
+
+    @album.image_url
+    @album.image_url = "/assets/default_album.png" if @album.image_url.empty?
   
     respond_to do |format|
       if @album.save

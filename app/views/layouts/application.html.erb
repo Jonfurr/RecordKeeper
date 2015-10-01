@@ -35,7 +35,6 @@
            <div class="col-md-4">
             <div class="nav" id="login">
               <% if current_user %>
-                <img height="30" width="30" src="<%= @user.pic_url %>">
                 Howdy <%= current_user.name %>! |
                 <%= link_to "Edit Profile", edit_user_path(current_user.id) %> | 
                 <%= link_to "Logout", :logout, method: :post %>
