@@ -4,14 +4,24 @@ class AlbumsController < ApplicationController
 
   # GET /albums
   # GET /albums.json
-  def index
-    @albums = Album.all
+# <<<<<<< HEAD
+def index
 
-    if params[:search]
-      @albums = Album.search(params[:search]).order("created_at DESC")
-    else
-      @albums = Album.all.order('created_at DESC')
-    end
+  if params[:search]
+    @albums = Album.search(params[:search]).order("created_at DESC")
+  else
+    @albums = Album.take(10)
+  end
+# =======
+#   def index
+#     @albums = Album.all
+
+#     if params[:search]
+#       @albums = Album.search(params[:search]).order("created_at DESC")
+#     else
+#       @albums = Album.all.order('created_at DESC')
+#     end
+# >>>>>>> master
   end
 
 
@@ -19,6 +29,8 @@ class AlbumsController < ApplicationController
   # GET /albums/1.json
   def show
     @album = Album.find(params[:id])
+    # @added_by= User.joins('LEFT OUTER JOIN albums ON albums.id = @album')
+
   end
   
  
@@ -80,6 +92,7 @@ class AlbumsController < ApplicationController
     def set_album
       @album = Album.find(params[:id])
     end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def album_params

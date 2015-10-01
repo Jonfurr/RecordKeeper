@@ -13,13 +13,6 @@
       <div class="row jumbotron">
         <h1 id="title"><a href="/"><span id="rec">REC</span>ordKeeper</a></h1>
       </div>
-      <div class="pull-right">
-        <br>
-         <%= form_tag(albums_path, :method => "get", id: "search-form") do %>
-              <%= text_field_tag :search, params[:search], placeholder: "..." %>
-              <%= submit_tag "Search" %>
-              <% end %>
-      </div>
       <div id="body" class="row panel panel-default">  
         <div class="panel-body col-md-12">
           <div class="col-md-4" role="navigation">
@@ -34,10 +27,15 @@
             </div>
           </div>
           <div class="col-md-4">
+         <%= form_tag(albums_path, :method => "get", id: "search-form") do %>
+              <%= text_field_tag :search, params[:search], placeholder: "..." %>
+              <%= submit_tag "Search" %>
+              <% end %>
           </div>
            <div class="col-md-4">
             <div class="nav" id="login">
               <% if current_user %>
+                Howdy <%= current_user.name %>! |
                 <%= link_to "Edit Profile", edit_user_path(current_user.id) %> | 
                 <%= link_to "Logout", :logout, method: :post %>
               <% else %>
