@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.pic_url
-    @user.pic_url ||= "/assets/default.png"
+    @user.pic_url = "/assets/default.png" if @user.pic_url.empty?
 
     respond_to do |format|
       if @user.save
