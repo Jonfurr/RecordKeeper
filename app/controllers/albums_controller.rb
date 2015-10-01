@@ -29,6 +29,8 @@ def index
   # GET /albums/1.json
   def show
     @album = Album.find(params[:id])
+    @added_by= User.joins('LEFT OUTER JOIN albums ON albums.id = @album')
+
   end
   
  
@@ -90,6 +92,7 @@ def index
     def set_album
       @album = Album.find(params[:id])
     end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def album_params
