@@ -3,7 +3,7 @@
 <div class="container">	 
 	<div class="row">
         <div id = "prof_box" class=" col-md-3">
-			<img id="prof_pic" src="<%= @user.pic_url %>">
+			<img class="img-responsive" src="<%= @user.pic_url %>">
 				<table class="table table-striped">
 				<!--   <thead>
 				    <tr>
@@ -16,7 +16,11 @@
 				      <tr>
 				        <td><%= @user.name %></td>
 				      	<td><%= @user.email %></td>
+
+				      	<ul role="presentation" class="active"><a href="/albums/new">Add Album</a></ul>
+
 				      	<td><a href="/albums/new">Add Album</a></td>.
+
 
 				      </tr>
 				  </tbody>

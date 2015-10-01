@@ -29,6 +29,8 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
+    @user.pic_url
+    @user.pic_url ||= "/assets/default.png"
 
     respond_to do |format|
       if @user.save
@@ -39,10 +41,9 @@ class UsersController < ApplicationController
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
-        end
-      end
+      end  
     end
-
+  end
 
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
@@ -76,7 +77,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :name, :password, :password_confirmation, :session)
+      params.require(:user).permit(:email, :name, :pic_url, :password, :password_confirmation, :session)
     end
 end
 
