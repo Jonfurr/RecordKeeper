@@ -1,12 +1,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.jumbotron {
-	background-image: url(http://g.fastcompany.net/multisite_files/cocreate/article_feature/1280-jp-record-shelf-1.jpg);
+.container-fluid {
+	background-image: url(http://www.mdmarchive.co.uk/gfx/HiRes-10737.jpg);
 	background-repeat: no-repeat;
-    background-position: right top;
-	margin-top: 2%;
+    background-position: center;
 	box-shadow: 3px 3px 5px #808080;
+	padding: 3%;
+	position: fixed;
+	left: 0px;
+	right: 0px;
+	z-index: 1;
 }
 
 #prof_pic {
@@ -36,16 +40,26 @@
 #login {
 		text-align: right;
 }
+#search{
+	text-align: center;
+}
 
-.btn {
-	margin-top: 10px;
+.nav-pills {
+	margin: 10px;
+	background-color: white;
+	opacity: 0;
+}
+.nav-pills:hover{
+	opacity: 1;
 }
 
 #body {
 	background-color: #eaeaea;
 	border-radius: 10px;
 	box-shadow: 3px 3px 5px #808080;
+	margin-top: 125px;
 }
+
 
 #title {
 	/*font-family: 'Permanent Marker', cursive;*/
