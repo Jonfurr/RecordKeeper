@@ -1,16 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.container-fluid {
-	background-image: url(http://www.mdmarchive.co.uk/gfx/HiRes-10737.jpg);
+.jumbotron {
+	background-image: url(http://g.fastcompany.net/multisite_files/cocreate/article_feature/1280-jp-record-shelf-1.jpg);
 	background-repeat: no-repeat;
-    background-position: center;
+    background-position: right top;
+	margin-top: 2%;
 	box-shadow: 3px 3px 5px #808080;
-	padding: 3%;
-	position: fixed;
-	left: 0px;
-	right: 0px;
-	z-index: 1;
 }
 
 #prof_pic {
@@ -21,9 +17,6 @@
 	border: 1px solid #808080;
 }
 
-#prof_content{
-	text-align: center;
-}
 
 #prof_box {
 	box-shadow: 3px 3px 5px #808080;
@@ -40,26 +33,16 @@
 #login {
 		text-align: right;
 }
-#search{
-	text-align: center;
-}
 
-.nav-pills {
-	margin: 10px;
-	background-color: white;
-	opacity: 0;
-}
-.nav-pills:hover{
-	opacity: 1;
+.btn {
+	margin-top: 10px;
 }
 
 #body {
 	background-color: #eaeaea;
 	border-radius: 10px;
 	box-shadow: 3px 3px 5px #808080;
-	margin-top: 125px;
 }
-
 
 #title {
 	/*font-family: 'Permanent Marker', cursive;*/
@@ -80,6 +63,18 @@
 #navbar {
 	padding-left: 5%;
 	background-color: #ff0000;
+	border-bottom: 2px solid black;
+}
+
+#pills {
+	color: white;
+	text-shadow: -4px 4px 2px #000000;
+}
+
+.thumbnail{
+   max-width: 100px;
+   max-height: 100px;
+}ound-color: #ff0000;
 	border-bottom: 2px solid black;
 }
 
