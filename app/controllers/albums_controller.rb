@@ -29,7 +29,7 @@ def index
   # GET /albums/1.json
   def show
     @album = Album.find(params[:id])
-    @added_by= User.joins('LEFT OUTER JOIN albums ON albums.id = @album')
+    # @added_by= User.joins('LEFT OUTER JOIN albums ON albums.id = @album')
 
   end
   
