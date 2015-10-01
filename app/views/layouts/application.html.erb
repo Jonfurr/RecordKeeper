@@ -14,43 +14,39 @@
         <div data-spy="affix" class="container-fluid">
           <div id="menu_bar">
             <ul class = "nav nav-justified">
+           
               <li>
-                <div class="navbar-header">
-                <a href="/" class="pull-left"><img src="assets/images/Logo.png"></a>
+                <div class="logo">
+                  <img src="https://db.tt/F4vBQ5MS">        
                 </div>
               </li>
-                <% if current_user %>
-              <li class="nav-pills">
-                  <%= link_to "Home", albums_path %> 
-              </li>
-              <li class="nav-pills">
-                  <%= link_to "Profile", user_path(current_user.id) %>
-              </li>
-                <% else %>
-              <li class="nav-pills">
-                    <%= link_to "Home", albums_path %> 
-              </li> 
-              <li class="nav-pills">
-                    <%= link_to "Profile", :login %>
-              </li>
-                  <% end %>
-              </li>
+          
+            <% if current_user %>
+              <li class="nav-pills"> <%= link_to "Home", albums_path %> </li>
+              <li class="nav-pills"> <%= link_to "Profile", user_path(current_user.id) %> </li>
+            <% else %>
+              <li class="nav-pills"> <%= link_to "Home", albums_path %></li> 
+              <li class="nav-pills"> <%= link_to "Profile", :login %> </li>
+            <% end %>
+
               <li id="search">
                 <%= form_tag(albums_path, :method => "get", id: "search-form") do %>
                 <%= text_field_tag :search, params[:search], placeholder: "..." %>
               </li>
-              <li>
-                <%= submit_tag "Search" %>
+              <li>  
+                <%= submit_tag "Search" %>              
                 <% end %>
-              </li>
-                <% if current_user %>
-                  Howdy <%= current_user.name %>! 
+              </li>             
+
+            <% if current_user %>
               <li class="nav-pills">
                 <%= link_to "Edit Profile", edit_user_path(current_user.id) %>  
               </li>
+
               <li class="nav-pills">
                   <%= link_to "Logout", :logout, method: :post %>
               </li>
+
                 <% else %>
               <li class="nav-pills">
                 <%= link_to "Register", new_user_path %> 

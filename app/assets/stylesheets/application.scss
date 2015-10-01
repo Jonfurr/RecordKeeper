@@ -4,9 +4,9 @@
 .container-fluid {
 	background-image: url(http://www.mdmarchive.co.uk/gfx/HiRes-10737.jpg);
 	background-repeat: no-repeat;
-    background-position: center;
+    background-position: left;
+    background-clip: content-box;
 	box-shadow: 3px 3px 5px #808080;
-	padding: 3%;
 	position: fixed;
 	left: 0px;
 	right: 0px;
@@ -33,22 +33,23 @@
 }
 
 .nav {
-	margin-top: 2%;
-	margin-bottom: 4%;
+	margin-top: 15px;
+	margin-bottom: 15px;
 }
 
 #login {
-		text-align: right;
+	text-align: right;
 }
 #search{
 	text-align: center;
 }
 
-.nav-pills {
-	margin: 10px;
-	background-color: white;
-	opacity: 0;
+.nav-pills li {
+	opacity: 1;
+	max-width: 50px;
+	max-height: 40px;
 }
+
 .nav-pills:hover{
 	opacity: 1;
 }
@@ -57,12 +58,10 @@
 	background-color: #eaeaea;
 	border-radius: 10px;
 	box-shadow: 3px 3px 5px #808080;
-	margin-top: 125px;
+	margin-top: 80px;
 }
 
-
 #title {
-	/*font-family: 'Permanent Marker', cursive;*/
 	font-size: 64pt;
 	color: white;
 	text-shadow: -4px 4px 2px #000000;
