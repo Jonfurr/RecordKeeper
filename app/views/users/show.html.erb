@@ -13,16 +13,13 @@
 				  </thead> -->
 
 				  <tbody>
-				      <tr>
-				        <td><%= @user.name %></td>
+				    <tr>
+					    <td><%= @user.name %></td>
 				      	<td><%= @user.email %></td>
-
-				      	<ul role="presentation" class="active"><a href="/albums/new">Add Album</a></ul>
-
-				      	<td><a href="/albums/new">Add Album</a></td>.
-
-
-				      </tr>
+					</tr>	
+					<tr>
+			    	  	<td><a href="/albums/new">Add Album</a></td>
+				    </tr>
 				  </tbody>
 				</table>
 			<br>			
@@ -72,7 +69,4 @@
 		</div>
 	</div>
 </div>
-<br>
-<br>
-<%= link_to 'Edit', edit_user_path(@user) %> 
-<%= link_to 'Back', users_path %>
+
