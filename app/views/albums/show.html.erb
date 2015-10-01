@@ -95,7 +95,7 @@
                 <td>Country: <%= @album.country %></td>
               </tr>
               <tr>
-                <td>Added By: <%= @album.user.name %></td>
+                <td>Added By: <a href="/users/<%= @album.user.id %>"><%= @album.user.name %></a></td>
               </tr>
 
           </tbody>
