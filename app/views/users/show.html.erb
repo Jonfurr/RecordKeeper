@@ -16,7 +16,12 @@
 				      <tr>
 				        <td><%= @user.name %></td>
 				      	<td><%= @user.email %></td>
+
 				      	<ul role="presentation" class="active"><a href="/albums/new">Add Album</a></ul>
+
+				      	<td><a href="/albums/new">Add Album</a></td>.
+
+
 				      </tr>
 				  </tbody>
 				</table>
@@ -33,23 +38,33 @@
 						<th>Label</th>
 						<th>Format</th>
 						<th>Pressing</th>
+						<th>Edit</th>
+						<th>Delete</th>
+						
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
 						<% @albums.each do |album| %>
       					<tr>
-        			<td><img class="img-thumbnail" width="100px" src="<%= album.image_url %>"></td>
+        			<td >
+
+        				<%= link_to album do %>
+        				<%image_tag album.image_url, :class => "thumbnail" %> 
+        				<%end%>
+        			 </td>
         				<td><%= album.artist %></td>
         				<td><%= album.title %></td>
         				<td><%= album.year %></td>
-						<td><%= album.label %>
-						</td>
-						<td><%= album.format %>
-						</td>
-						<td><%= album.pressing %>
+						<td><%= album.label %></td>						
+						<td><%= album.format %></td>					
+						<td><%= album.pressing%></td>
+						<td><%= link_to 'Edit', edit_album_path(album) %></td>
+						
+							<td><%= button_to "delete", album_path(:id => album), :method => :delete %></td> 
+
 						</tr>
-					 <% end %>
+					 <%end%>
 					
 					</tr>
 				</tbody>
@@ -59,5 +74,5 @@
 </div>
 <br>
 <br>
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Edit', edit_user_path(@user) %> 
 <%= link_to 'Back', users_path %>

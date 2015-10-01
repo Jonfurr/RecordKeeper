@@ -4,7 +4,7 @@ class AlbumsController < ApplicationController
 
   # GET /albums
   # GET /albums.json
-# <<<<<<< HEAD
+
 def index
 
   if params[:search]
@@ -12,16 +12,7 @@ def index
   else
     @albums = Album.take(10)
   end
-# =======
-#   def index
-#     @albums = Album.all
 
-#     if params[:search]
-#       @albums = Album.search(params[:search]).order("created_at DESC")
-#     else
-#       @albums = Album.all.order('created_at DESC')
-#     end
-# >>>>>>> master
   end
 
 
@@ -29,7 +20,7 @@ def index
   # GET /albums/1.json
   def show
     @album = Album.find(params[:id])
-    @added_by= User.joins('LEFT OUTER JOIN albums ON albums.id = @album')
+    #  
 
   end
   
