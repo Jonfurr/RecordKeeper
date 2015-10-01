@@ -19,9 +19,11 @@ def index
   # GET /albums/1
   # GET /albums/1.json
   def show
-    @album = Album.find(params[:id])
-    #  
+    @album = Album.joins('LEFT OUTER JOIN users ON albums.user_id = users.id').find(params[:id])
+    
 
+    # LEFT OUTER JOIN addresses ON addresses.client_id = clients.id'
+    # @added_by = User.joins('LEFT OUTER JOIN albums ON albums.id = @album')
   end
   
  
