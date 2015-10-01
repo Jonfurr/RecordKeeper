@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   def show
    @user = User.find(params[:id])
    @albums= Album.where(user_id: params[:id])
+   # @album = Album.joins('LEFT OUTER JOIN users ON albums.user_id = users.id').find(params[:id])
   end
 
   # GET /users/new
