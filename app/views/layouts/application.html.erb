@@ -19,10 +19,11 @@
              <div class="nav">
               <% if current_user %>
                 <%= link_to "Home", albums_path %> | 
-                <%= link_to "Profile", user_path(current_user.id) %>
+                <%= link_to "Profile", user_path(current_user.id) %> | 
+                <a href="/albums/new">Add Album</a></td>
               <% else %>
                 <%= link_to "Home", albums_path %> | 
-                <%= link_to "Profile", :login %>
+                <%= link_to "Profile", :login %> |
               <% end %>
             </div>
           </div>
