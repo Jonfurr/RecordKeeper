@@ -20,7 +20,7 @@ def index
   # GET /albums/1.json
   def show
     @album = Album.joins('LEFT OUTER JOIN users ON albums.user_id = users.id').find(params[:id])
-    
+
 
     # LEFT OUTER JOIN addresses ON addresses.client_id = clients.id'
     # @added_by = User.joins('LEFT OUTER JOIN albums ON albums.id = @album')
@@ -43,7 +43,7 @@ def index
   # POST /albums
   # POST /albums.json
   def create
-    @album = Album.new(album_params.merge(user_id: @current_user_id))
+    @album = Album.new(album_params.merge(user_id: current_user.id))
 
     @album.image_url
     @album.image_url = "/assets/default_album.png" if @album.image_url.empty?

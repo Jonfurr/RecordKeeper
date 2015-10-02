@@ -62,17 +62,14 @@
 
 <div class="container">  
   <div class="row">
-        <div id = "prof_box" class=" col-md-3">
-      <img id="prof_pic" src="<%= @album.image_url %>">
-        <table class="table table-striped">
-        <!--   <thead>
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-            </tr>
-          </thead> -->
-
-          <tbody>
+    <div id = "prof_box" class="col-md-3 col-sm-3">
+      <img id="prof_pic" src="<%= @album.image_url %>">   
+    </div>
+    <div id="prof_content" class= "col-md-9">
+      <h1 style="text-align: center"><%= @album.artist %></h1>
+      <h3 style="text-align: center"><%= @album.title %></h3><br><br>      
+    <table class="table table-striped">
+          <tbody style="text-align: center">
               <tr>
                 <td>Artist: <%= @album.artist %></td>
               </tr>
@@ -93,19 +90,14 @@
               </tr>
               <tr>  
                 <td>Country: <%= @album.country %></td>
+              </tr>
               <tr>
-                <td>Added By: <%= @album.user.name %></td>
+                <td>Added By: <a href="/users/<%= @album.user.id %>"><%= @album.user.name %></a></td>
               </tr>
 
-           
           </tbody>
         </table>
-      <br>      
-    </div>
-    <div id="prof_content" class= "col-md-9">
-      <h1><%= @album.artist %></h1>
-      <h3><%= @album.title %></h3><br><br>      
-    </div>
+        </div> 
   </div>
 </div>
 <br>

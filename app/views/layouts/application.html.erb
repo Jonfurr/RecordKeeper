@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= favicon_link_tag 'favicon.ico' %>
   </head>
-  <body>
+  <body style="background-color: #dbdbdb">
     <div class="container">
       <div class="row jumbotron">
         <h1 id="title"><a href="/"><span id="rec">REC</span>ordKeeper</a></h1>
@@ -26,16 +26,15 @@
               <% end %>
             </div>
           </div>
-          <div class="col-md-4">
-         <%= form_tag(albums_path, :method => "get", id: "search-form") do %>
-              <%= text_field_tag :search, params[:search], placeholder: "..." %>
+          <div style="text-align: center" class="col-md-4">
+              <%= form_tag(albums_path, :method => "get", id: "search-form") do %>
+              <%= text_field_tag :search, params[:search], placeholder: "Search for..." %>
               <%= submit_tag "Search" %>
               <% end %>
           </div>
            <div class="col-md-4">
             <div class="nav" id="login">
               <% if current_user %>
-                Howdy <%= current_user.name %>! |
                 <%= link_to "Edit Profile", edit_user_path(current_user.id) %> | 
                 <%= link_to "Logout", :logout, method: :post %>
               <% else %>
@@ -57,3 +56,4 @@
     </div>
   </body>
 </html>
+
