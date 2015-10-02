@@ -2,7 +2,7 @@
 # The default is nothing which will include only core features (password encryption, login/logout).
 # Available submodules are: :user_activation, :http_basic_auth, :remember_me,
 # :reset_password, :session_timeout, :brute_force_protection, :activity_logging, :external
-Rails.application.config.sorcery.submodules = []
+Rails.application.config.sorcery.submodules = [:activity_logging]
 
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|
@@ -77,6 +77,28 @@ Rails.application.config.sorcery.configure do |config|
   # Default: `[]`
   #
   # config.external_providers =
+
+  Rails.application.config.sorcery.submodules = [:external]
+
+Rails.application.config.sorcery.configure do |config|
+    config.external_providers = [:facebook]
+  config.facebook.key = "146965272319104"
+  config.facebook.secret = "146965272319104"
+  config.facebook.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=facebook"
+  config.facebook.user_info_mapping = {:email => "email", :name => "name"} #etc
+  config.facebook.scope = "email,offline_access,user_hometown,user_interests,user_likes" #etc
+  config.facebook.display = "popup"
+  
+  # --- user config ---
+  config.user_config do |user|
+  
+    # -- external --
+    user.authentications_class = Authentication
+    
+
+  end
+  
+end
 
 
   # You can change it by your local ca_file. i.e. '/etc/pki/tls/certs/ca-bundle.crt'
