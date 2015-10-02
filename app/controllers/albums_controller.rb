@@ -10,7 +10,7 @@ def index
   if params[:search]
     @albums = Album.search(params[:search]).order("created_at DESC")
   else
-    @albums = Album.take(7)
+    @albums = Album.take(10)
   end
 
   end
