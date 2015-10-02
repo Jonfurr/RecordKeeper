@@ -2,7 +2,6 @@
 	<h1>Register</h1>
 	<%= render 'form' %>
 </div>
-<p id="notice"><%= notice %></p>
 
 <div class="col-md-6 text-center">
 	<h1>Sign In</h1>
@@ -16,7 +15,7 @@
 	    <%= password_field_tag :password %>
 	  </div>
 	  <div class="actions">
-	    <%= submit_tag "Login", :login, class: "btn btn-primary" %>
+	    <%= submit_tag "Login", class: "btn btn-primary" %>
 	  </div>
 	<% end %>
   <p><%= link_to 'Forgot your password?', new_reset_password_path %></p>
