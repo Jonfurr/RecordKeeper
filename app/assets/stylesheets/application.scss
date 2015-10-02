@@ -45,10 +45,10 @@
 }
 
 #title {
-	/*font-family: 'Permanent Marker', cursive;*/
-	font-size: 64pt;
+	font-size: 100%;
 	color: white;
 	text-shadow: -4px 4px 2px #000000;
+	max-width: 100%;
 }
 #title a {
 	text-decoration: none;
