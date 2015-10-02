@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150930203820) do
+ActiveRecord::Schema.define(version: 20151001210835) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,17 +29,17 @@ ActiveRecord::Schema.define(version: 20150930203820) do
     t.string   "country"
     t.text     "comment"
     t.boolean  "favorite"
+    t.integer  "user_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "user_id"
   end
 
-  add_index "albums", ["user_id"], name: "index_albums_on_user_id", using: :btree
+  add_index "albums", ["artist", "title", "genre"], name: "index_albums_on_artist_and_title_and_genre", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                      null: false
+    t.string   "email",                           null: false
     t.string   "pic_url"
-    t.string   "name",                       null: false
+    t.string   "name",                            null: false
     t.string   "favorite"
     t.string   "crypted_password"
     t.string   "salt"
@@ -49,10 +49,13 @@ ActiveRecord::Schema.define(version: 20150930203820) do
     t.datetime "last_logout_at"
     t.datetime "last_activity_at"
     t.string   "last_login_from_ip_address"
+    t.string   "reset_password_token"
+    t.datetime "reset_password_token_expires_at"
+    t.datetime "reset_password_email_sent_at"
   end
 
   add_index "users", ["last_logout_at", "last_activity_at"], name: "index_users_on_last_logout_at_and_last_activity_at", using: :btree
   add_index "users", ["name", "email"], name: "index_users_on_name_and_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", using: :btree
 
-  add_foreign_key "albums", "users"
 end
