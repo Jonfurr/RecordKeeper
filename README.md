@@ -5,7 +5,7 @@ Before starting the actual coding process we took time to plan out what models w
 
 To build our application we utilized Ruby on Rails framework and library along with Postgresql to manage our database. To build our basic user structure we used a gem called sorcery. Sorcery helped us complete login, logout, and authentication functionality. We used bootstrap with html and css to create the styling of the application and give the user a mobile friendly site.Github and git were used to manage version control,and keep track of changes. In order to deploy a live site, we connected our repository to Heroku.
 
-Unsolved problems/issues TBD.
+Our oustanding issue is with responsiveness on our mobile site for only the user profile pages. 
 
 
 
