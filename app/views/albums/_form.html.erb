@@ -43,9 +43,14 @@
     <%= f.label :image_url %><br>
     <%= f.text_area :image_url %>
   </div>
-  <div class="field">
+  <div class="field" id="tracklist">
+
     <%= f.label :tracklist %><br>
+
     <%= f.text_field :tracklist %>
+
+    <input id="button-tracklist">
+
   </div>
   <div class="field">
     <%= f.label :country %><br>
@@ -59,7 +64,18 @@
     <%= f.label :favorite %><br>
     <%= f.check_box :favorite %>
   </div>
+
+
   <div class="actions">
+
+    <div id="hiddeninputs">
+
+    </div>
     <%= f.submit %>
   </div>
 <% end %>
+
+
+<script>console.log(valueHolder)</script>
+
+
