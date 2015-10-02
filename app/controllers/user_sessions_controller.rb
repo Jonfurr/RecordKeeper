@@ -13,8 +13,8 @@ class UserSessionsController < ApplicationController
       redirect_back_or_to(:albums, notice: 'Login successful')
 
     else
-      flash[:error] = "Your login failed. Please try again or create an account!"
       redirect_back_or_to('welcome')
+      flash[:error] = "Your login failed. Please try again or create an account!"
     end
   end
 
