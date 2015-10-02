@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-     unless session[:current_user_id] === @user.id
+     unless session[:current_user_id] == @user.id
       flash[:alert] = "You don't have access to that User!"
       redirect_to users_path(session[:current_user_id])
       return
