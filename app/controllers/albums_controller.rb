@@ -77,12 +77,19 @@ def index
   # DELETE /albums/1
   # DELETE /albums/1.json
   def destroy
-    @album.destroy
-    respond_to do |format|
+
+    if current_user.id != @album.user_id
+      flash[:alert] = "YOU CAN'T DELETE OTHERS ALBUMS!!!! U JERK!!!!"
+      redirect_to albums_url(session[:current_user_id])
+      return
+    else
+      @album.destroy
+      respond_to do |format|
       format.html { redirect_to current_user, notice: 'Album was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
+end
 
   private
     # Use callbacks to share common setup or constraints between actions.
