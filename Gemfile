@@ -29,6 +29,8 @@ gem 'sorcery'
 
 gem 'puma'
 
+gem 'letter_opener', :group => :development
+
 # gem 'faker'
 
 # gem 'populator'
