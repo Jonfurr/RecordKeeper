@@ -25,6 +25,7 @@ def index
     # LEFT OUTER JOIN addresses ON addresses.client_id = clients.id'
     # @added_by = User.joins('LEFT OUTER JOIN albums ON albums.id = @album')
   end
+
   
  
    
@@ -78,7 +79,7 @@ def index
   def destroy
     @album.destroy
     respond_to do |format|
-      format.html { redirect_to albums_url, notice: 'Album was successfully destroyed.' }
+      format.html { redirect_to current_user, notice: 'Album was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
