@@ -38,7 +38,11 @@ def index
 
   # GET /albums/1/edit
   def edit
-
+    if current_user.id != @album.user_id
+      flash[:alert] = "You don't have access to this album!"
+      redirect_to albums_url(session[:current_user_id])
+      return
+    end
   end
 
   # POST /albums
