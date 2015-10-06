@@ -10,3 +10,4 @@ class Album < ActiveRecord::Base
   		Album.where('title ILIKE :search OR country ILIKE :search OR genre ILIKE :search OR artist ILIKE :search OR label ILIKE :search', search: "%#{search}%")
 	end
 end
+# Elastic Search Gem
